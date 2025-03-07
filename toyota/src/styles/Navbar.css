@@ -1,51 +1,119 @@
-.navbar{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    background: #0d47a1;
-    padding: 10px 20px;
-    color: wheat;
+/* General Navbar Styling */
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  font-family: "Arial", sans-serif;
+  display: flex;
+  align-items: center;
+  padding: 15px 40px;
 }
-.logo{
-    font-size:24px;
-    font-weight: bold;
+
+/* Logo */
+.nav-logo img {
+  height: 50px;
+  cursor: pointer;
 }
-.nav-links{
-    list-style: none;
-    display: flex;
-    gap: 20px;
+
+/* Navigation Links */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  margin-left: 40px;
+  font-weight: 600;
+  text-transform: uppercase; /* Uppercase text */
 }
-.nav-links a{
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease;
+
+.nav-links li {
+  list-style: none;
+  position: relative;
 }
-.nv-links a:hover{
-    color:#ffcc00;
+
+/* Standard Navigation Links */
+.nav-links a,
+.dropdown-btn {
+  text-decoration: none;
+  color: black; /* Black text */
+  padding: 10px 0; /* Keep uniform padding */
+  cursor: pointer;
+  font-size: 16px;
+  position: relative;
+  transition: color 0.3s ease-in-out;
+  display: inline-block; /* Ensures uniform size */
 }
-.menu-btn{
-    display: none;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
+
+/* Red underline on hover */
+.nav-links a::after,
+.dropdown-btn::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: red;
+  transition: width 0.3s ease-in-out;
+  position: absolute;
+  left: 0;
+  bottom: -5px;
 }
-@media(max-width:768px){
-    .nav-links{
-        display:none;
-        flex-direction: column;
-        position: absolute;
-        top: 50px;
-        right: 20px;
-        background: #0d47a1;
-        width: 150px;
-        padding: 10px;
-    }
-    .menu-btn{
-        .menu-btn:hover + .nav-links{
-            display: flex;
-        }
-    }
+
+.nav-links a:hover::after,
+.dropdown-btn:hover::after {
+  width: 100%;
+}
+
+/* Dropdown Styling */
+.dropdown {
+  position: relative;
+  display: inline-block; /* Make it behave like a normal link */
+}
+
+/* Ensure dropdown button has the same styling as links */
+.dropdown-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: black;
+  text-transform: uppercase;
+  padding: 10px 0; /* Same as links */
+  cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  background: white;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  padding: 10px 0;
+  width: 200px;
+  display: none;
+  border-radius: 3px;
+  z-index: 1000;
+}
+
+/* Show dropdown on hover */
+.dropdown:hover .dropdown-content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Dropdown Links */
+.dropdown-content a {
+  color: black;
+  padding: 10px 15px;
+  text-decoration: none;
+  font-size: 16px;
+  display: block;
+}
+
+.dropdown-content a:hover {
+  color: red;
+  background: rgba(255, 0, 0, 0.1); /* Light red background on hover */
 }

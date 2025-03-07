@@ -5,7 +5,7 @@ function App() {
   return (
     <div>
       <Navbar />
-      <h1>Welcome to Toyota India</h1>
+      <h1>Hello World</h1>
     </div>
   );
 }
