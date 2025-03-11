@@ -1,31 +1,49 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logo from "../assets/toyota_logo.png";
-import "../styles/Navbar.css";
+import "../styles/Navbar.css"; // Ensure this exists
 
+// If the Toyota logo is inside "public/assets/", use this:
+const logo = "/assets/toyota_logo.png";
+
+// Car Models Data (Images from "public/assets/")
 const carModels = [
   { name: "Glanza", image: "/assets/glanza.jpeg", category: "Cars" },
-  { name: "Urban Cruiser Taisor", image: "/assets/urban_cruiser.jpeg", category: "Cars" },
+  { name: "Urban Cruiser Taisor", image: "/assets/glanza.jpeg", category: "Cars" },
   { name: "Rumion", image: "/assets/rumion.jpeg", category: "MPV" },
-  { name: "Urban Cruiser Hyryder", image: "/assets/Urban Cruiser Hyryder.jpeg", category: "SUV" },
-  { name: "Innova Crysta", image: "/assets/Innova_Crysta.jpeg", category: "MPV" },
-  { name: "Innova Hycross", image: "/assets/Innova Hycross.jpeg", category: "MPV" },
+  { name: "Urban Cruiser Hyryder", image: "/assets/rumion.jpeg", category: "SUV" },
+  { name: "Innova Crysta", image: "/assets/glanza.jpeg", category: "MPV" },
+  { name: "Innova Hycross", image: "/assets/rumion.jpeg", category: "MPV" },
   { name: "Hilux", image: "/assets/hilux.jpeg", category: "SUV" },
-  { name: "Fortuner", image: "/assets/fortuner.jpeg", category: "SUV" },
-  { name: "Legender", image: "/images/legender.png", category: "SUV" },
-  { name: "Camry", image: "/images/camry.png", category: "Cars" },
-  { name: "Vellfire", image: "/images/vellfire.png", category: "MPV" },
-  { name: "Land Cruiser 300", image: "/images/land-cruiser-300.png", category: "SUV" }
+  { name: "Fortuner", image: "/assets/hilux.jpeg", category: "SUV" },
+  { name: "Legender", image: "/assets/rumion.jpeg", category: "SUV" },
+  { name: "Camry", image: "/assets/rumion.jpeg", category: "Cars" },
+  { name: "Vellfire", image: "/assets/rumion.jpeg", category: "MPV" },
+  { name: "Vellfire", image: "/assets/rumion.jpeg", category: "MPV" },
+  
 ];
 
 const Navbar = () => {
   const [showProducts, setShowProducts] = useState(false);
   const [activeTab, setActiveTab] = useState("All Models");
 
-  const filterCars = () => {
-    if (activeTab === "All Models") return carModels;
-    return carModels.filter(car => car.category === activeTab);
+  // Filter cars based on category
+  const categoryLimits = {
+    Cars: 4,
+    MPV: 4,
+    SUV: 6,
   };
+  
+  const filterCars = () => {
+    if (activeTab === "All Models") {
+      return carModels; // Show all models without limiting
+    }
+  
+    const filteredCars = carModels.filter(car => car.category === activeTab);
+  
+    // Limit the number of displayed cars based on the category
+    return filteredCars.slice(0, categoryLimits[activeTab] || filteredCars.length);
+  };
+  
 
   return (
     <nav className="navbar">
@@ -37,9 +55,13 @@ const Navbar = () => {
       {/* Navigation Links */}
       <ul className="nav-links">
         {/* Products Dropdown */}
-        <li className="dropdown">
-          <button className="dropdown-btn" onClick={() => setShowProducts(!showProducts)}>
-            Products <span className={`arrow ${showProducts ? "rotate" : ""}`}>▼</span>
+        <li
+          className="dropdown"
+          onMouseEnter={() => setShowProducts(true)}
+          onMouseLeave={() => setShowProducts(false)}
+        >
+          <button className="dropdown-btn">
+            Models <span className={`arrow ${showProducts ? "rotate" : ""}`}>▼</span>
           </button>
 
           {showProducts && (
@@ -47,16 +69,20 @@ const Navbar = () => {
               {/* Tabs for filtering */}
               <div className="mega-menu-tabs">
                 {["All Models", "Cars", "MPV", "SUV"].map((tab) => (
-                  <button key={tab} className={activeTab === tab ? "active" : ""} onClick={() => setActiveTab(tab)}>
+                  <button 
+                    key={tab} 
+                    className={activeTab === tab ? "active" : ""} 
+                    onClick={() => setActiveTab(tab)}
+                  >
                     {tab}
                   </button>
                 ))}
               </div>
 
-              {/* Grid layout for car models */}
+              {/* Car Models Grid */}
               <div className="mega-menu-content">
-                {filterCars().map((car, index) => (
-                  <div key={index} className="car-card">
+                {filterCars().map((car) => (
+                  <div key={car.name} className="car-card">
                     <img src={car.image} alt={car.name} />
                     <p>{car.name}</p>
                   </div>
