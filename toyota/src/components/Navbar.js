@@ -1,23 +1,21 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/Navbar.css"; // Ensure this exists
-
-// If the Toyota logo is inside "public/assets/", use this:
+import "../styles/Navbar.css"; 
 const logo = "/assets/toyota_logo.png";
 
-// Car Models Data (Images from "public/assets/")
+
 const carModels = [
   { name: "Glanza", image: "/assets/glanza.jpeg", category: "Cars" },
   { name: "Urban Cruiser Taisor", image: "/assets/glanza.jpeg", category: "Cars" },
   { name: "Rumion", image: "/assets/rumion.jpeg", category: "MPV" },
-  { name: "Urban Cruiser Hyryder", image: "/assets/rumion.jpeg", category: "SUV" },
-  { name: "Innova Crysta", image: "/assets/glanza.jpeg", category: "MPV" },
-  { name: "Innova Hycross", image: "/assets/rumion.jpeg", category: "MPV" },
+  { name: "Urban Cruiser Hyryder", image: "/assets/urban_cruiser_hydrader.jpeg", category: "SUV" },
+  { name: "Innova Crysta", image: "/assets/Innova_Crysta.jpeg", category: "MPV" },
+  { name: "Innova Hycross", image: "/assets/Innova_Hycross.jpeg", category: "MPV" },
   { name: "Hilux", image: "/assets/hilux.jpeg", category: "SUV" },
-  { name: "Fortuner", image: "/assets/hilux.jpeg", category: "SUV" },
+  { name: "Fortuner", image: "/assets/fortuner.jpeg", category: "SUV" },
   { name: "Legender", image: "/assets/rumion.jpeg", category: "SUV" },
-  { name: "Camry", image: "/assets/rumion.jpeg", category: "Cars" },
-  { name: "Vellfire", image: "/assets/rumion.jpeg", category: "MPV" },
+  { name: "Camry", image: "/assets/Innova_Hycross.jpeg", category: "Cars" },
+  { name: "Vellfire", image: "/assets/fortuner.jpeg", category: "MPV" },
   { name: "Vellfire", image: "/assets/rumion.jpeg", category: "MPV" },
   
 ];
@@ -26,7 +24,7 @@ const Navbar = () => {
   const [showProducts, setShowProducts] = useState(false);
   const [activeTab, setActiveTab] = useState("All Models");
 
-  // Filter cars based on category
+
   const categoryLimits = {
     Cars: 4,
     MPV: 4,
@@ -35,12 +33,12 @@ const Navbar = () => {
   
   const filterCars = () => {
     if (activeTab === "All Models") {
-      return carModels; // Show all models without limiting
+      return carModels; 
     }
   
     const filteredCars = carModels.filter(car => car.category === activeTab);
   
-    // Limit the number of displayed cars based on the category
+   
     return filteredCars.slice(0, categoryLimits[activeTab] || filteredCars.length);
   };
   
