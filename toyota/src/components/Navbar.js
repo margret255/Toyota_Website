@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import "../styles/Navbar.css"; 
 const logo = "/assets/toyota_logo.png";
 
-
 const carModels = [
   { name: "Glanza", image: "/assets/glanza.jpeg", category: "Cars" },
   { name: "Urban Cruiser Taisor", image: "/assets/glanza.jpeg", category: "Cars" },
@@ -17,13 +16,11 @@ const carModels = [
   { name: "Camry", image: "/assets/Innova_Hycross.jpeg", category: "Cars" },
   { name: "Vellfire", image: "/assets/fortuner.jpeg", category: "MPV" },
   { name: "Vellfire", image: "/assets/rumion.jpeg", category: "MPV" },
-  
 ];
 
 const Navbar = () => {
   const [showProducts, setShowProducts] = useState(false);
   const [activeTab, setActiveTab] = useState("All Models");
-
 
   const categoryLimits = {
     Cars: 4,
@@ -38,11 +35,9 @@ const Navbar = () => {
   
     const filteredCars = carModels.filter(car => car.category === activeTab);
   
-   
     return filteredCars.slice(0, categoryLimits[activeTab] || filteredCars.length);
   };
   
-
   return (
     <nav className="navbar">
       {/* Toyota Logo */}
@@ -50,7 +45,7 @@ const Navbar = () => {
         <img src={logo} alt="Toyota Logo" />
       </div>
 
-      {/* Navigation Links */}
+      {/* Nav Links */}
       <ul className="nav-links">
         {/* Products Dropdown */}
         <li
@@ -64,7 +59,7 @@ const Navbar = () => {
 
           {showProducts && (
             <div className="mega-menu">
-              {/* Tabs for filtering */}
+              {/*  */}
               <div className="mega-menu-tabs">
                 {["All Models", "Cars", "MPV", "SUV"].map((tab) => (
                   <button 
@@ -77,7 +72,7 @@ const Navbar = () => {
                 ))}
               </div>
 
-              {/* Car Models Grid */}
+              {/* Car Models  */}
               <div className="mega-menu-content">
                 {filterCars().map((car) => (
                   <div key={car.name} className="car-card">
@@ -90,7 +85,7 @@ const Navbar = () => {
           )}
         </li>
 
-        {/* Other Navigation Links (UNCHANGED) */}
+        {/* Other Nav Links*/}
         <li><Link to="/virtual-showroom">Virtual Showroom</Link></li>
         <li><Link to="/service">Service</Link></li>
         <li><Link to="/t-care">T-Care</Link></li>
@@ -104,3 +99,6 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
+

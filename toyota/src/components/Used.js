@@ -5,7 +5,7 @@ import "../styles/Used.css";
 const Used = () => {
   return (
     <div className="used-container">
-      {/* Hero Section */}
+      {}
       <header className="hero">
         <img src="/images/hero-bg.jpg" alt="Toyota U Trust" className="hero-image" />
         <div className="hero-overlay">
@@ -14,7 +14,7 @@ const Used = () => {
         </div>
       </header>
 
-      {/* Content Section */}
+      {}
       <div className="content">
         <h2>TOYOTA U TRUST</h2>
         <p>
@@ -27,7 +27,7 @@ const Used = () => {
         </p>
       </div>
 
-      {/* Benefits Section */}
+      {}
       <div className="benefits">
         <div className="benefit-box">
           <span>🚗</span>
@@ -43,7 +43,7 @@ const Used = () => {
         </div>
       </div>
 
-      {/* Warranty Section */}
+      {}
       <div className="warranty">
         <div className="warranty-box">Up to 2 years / 30,000 Km Warranty*</div>
         <div className="warranty-box">Warranty available across Toyota dealer network</div>
@@ -60,6 +60,7 @@ const Used = () => {
             <li><Link to="#">Health & Safety</Link></li>
           </ul>
         </div>
+        
         <div className="footer-social">
           <h3>Follow Toyota</h3>
           <Link to="#">Facebook</Link> | <Link to="#">Twitter</Link> | <Link to="#">Instagram</Link>

@@ -1,4 +1,4 @@
-/* General Navbar Styling */
+
 .navbar {
   background-color: white;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -13,20 +13,20 @@
   padding: 15px 40px;
 }
 
-/* Logo */
+
 .nav-logo img {
   height: 50px;
   cursor: pointer;
 }
 
-/* Navigation Links */
+
 .nav-links {
   display: flex;
   align-items: center;
   gap: 40px;
   margin-left: 40px;
   font-weight: 600;
-  text-transform: uppercase; /* Uppercase text */
+  text-transform: uppercase;
 }
 
 .nav-links li {
@@ -34,20 +34,18 @@
   position: relative;
 }
 
-/* Standard Navigation Links */
+
 .nav-links a,
 .dropdown-btn {
   text-decoration: none;
-  color: black; /* Black text */
-  padding: 10px 0; /* Keep uniform padding */
+  color: black; 
+  padding: 10px 0; 
   cursor: pointer;
   font-size: 16px;
   position: relative;
   transition: color 0.3s ease-in-out;
-  display: inline-block; /* Ensures uniform size */
-}
+  display: inline-block;}
 
-/* Red underline on hover */
 .nav-links a::after,
 .dropdown-btn::after {
   content: "";
@@ -66,13 +64,11 @@
   width: 100%;
 }
 
-/* Dropdown Styling */
 .dropdown {
   position: relative;
-  display: inline-block; /* Make it behave like a normal link */
+  display: inline-block; 
 }
 
-/* Ensure dropdown button has the same styling as links */
 .dropdown-btn {
   background: none;
   border: none;
@@ -80,11 +76,10 @@
   font-weight: 600;
   color: black;
   text-transform: uppercase;
-  padding: 10px 0; /* Same as links */
+  padding: 10px 0; 
   cursor: pointer;
 }
 
-/* Dropdown Menu */
 .dropdown-content {
   position: absolute;
   top: 40px;
@@ -98,13 +93,13 @@
   z-index: 1000;
 }
 
-/* Show dropdown on hover */
+
 .dropdown:hover .dropdown-content {
   display: flex;
   flex-direction: column;
 }
 
-/* Dropdown Links */
+
 .dropdown-content a {
   color: black;
   padding: 10px 15px;
@@ -115,11 +110,11 @@
 
 .dropdown-content a:hover {
   color: red;
-  background: rgba(255, 0, 0, 0.1); /* Light red background on hover */
+  background: rgba(255, 0, 0, 0.1); 
 }
 
 
-/* Products Dropdown */
+
 .dropdown-btn {
   text-decoration: none;
   color: black;
@@ -134,7 +129,6 @@
   align-items: center;
 }
 
-/* Dropdown Arrow */
 .arrow {
   font-size: 12px;
   margin-left: 5px;
@@ -145,7 +139,6 @@
   transform: rotate(180deg);
 }
 
-/* MEGA MENU */
 .mega-menu {
   position: absolute;
   top: 100%;
@@ -160,7 +153,6 @@
   align-items: center;
 }
 
-/* Tabs */
 .mega-menu-tabs {
   display: flex;
   gap: 20px;
@@ -180,7 +172,6 @@
   border-bottom: 2px solid red;
 }
 
-/* Cars Grid */
 .mega-menu-content {
   display: grid;
   top: 100%;
@@ -192,6 +183,7 @@
   padding: 10px;
   text-align: center;
   z-index: 1000;
+  
   
 }
 
@@ -212,6 +204,8 @@
 .car-card p {
   font-weight: bold;
   margin-top: 10px;
+
+  text-decoration-color:red ;
 }
 
 .car-card:hover {
@@ -220,6 +214,7 @@
 .card-card:hover p{
   text-decoration: underline;
   text-decoration-color:red ;
+  
   
 }
 
