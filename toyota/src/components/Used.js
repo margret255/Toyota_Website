@@ -5,16 +5,20 @@ import "../styles/Used.css";
 const Used = () => {
   return (
     <div className="used-container">
-      {}
+      {/* Hero Section */}
       <header className="hero">
-        <img src="/images/hero-bg.jpg" alt="Toyota U Trust" className="hero-image" />
-        <div className="hero-overlay">
-          <h1 className="hero-title">Toyota U Trust</h1>
-          <Link to="#" className="hero-button">CLICK HERE TO SEE USED CAR INVENTORY</Link>
+        <div className="hero-content">
+          <img src="/images/hero-bg.jpg" alt="Toyota U Trust" className="hero-image" />
+          <div className="hero-overlay">
+            <h1 className="hero-title">TOYOTA U TRUST</h1>
+            <Link to="#" className="hero-button">
+              CLICK HERE TO SEE USED CAR INVENTORY
+            </Link>
+          </div>
         </div>
       </header>
 
-      {}
+      {/* Content Section */}
       <div className="content">
         <h2>TOYOTA U TRUST</h2>
         <p>
@@ -27,23 +31,23 @@ const Used = () => {
         </p>
       </div>
 
-      {}
+      {/* Benefits Section */}
       <div className="benefits">
         <div className="benefit-box">
-          <span>🚗</span>
+          <img src="/images/toyota-icon.png" alt="Toyota Quality" />
           <p>Legendary Toyota Quality</p>
         </div>
         <div className="benefit-box">
-          <span>✅</span>
+          <img src="/images/inspection-icon.png" alt="Inspection" />
           <p>203 Point Inspection</p>
         </div>
         <div className="benefit-box">
-          <span>🔖</span>
+          <img src="/images/certification-icon.png" alt="Certification" />
           <p>Quality Certification by Toyota</p>
         </div>
       </div>
 
-      {}
+      {/* Warranty Section */}
       <div className="warranty">
         <div className="warranty-box">Up to 2 years / 30,000 Km Warranty*</div>
         <div className="warranty-box">Warranty available across Toyota dealer network</div>
@@ -60,7 +64,6 @@ const Used = () => {
             <li><Link to="#">Health & Safety</Link></li>
           </ul>
         </div>
-        
         <div className="footer-social">
           <h3>Follow Toyota</h3>
           <Link to="#">Facebook</Link> | <Link to="#">Twitter</Link> | <Link to="#">Instagram</Link>
