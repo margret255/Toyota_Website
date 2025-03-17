@@ -191,6 +191,7 @@
 
 .car-card p {
   font-weight: bold;
+  display: inline-block;
   margin-top: 10px;
 }
 
@@ -202,8 +203,9 @@
   content: "";
   transition: width 0.3s ease-in-out;
   color: red;
+  
  
-
+  border-bottom: 2px solid red;
   text-decoration-color: red;
 }
 
@@ -211,13 +213,14 @@
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0px; /* Positioning the underline just below the text */
-  width: 0; /* Initially no underline */
+  
+  
+  width: 0; 
   height: 2px;
-  background-color: red;
-  transition: width 0.3s ease-in-out; /* Smooth animation */
+
+  transition: width 0.3s ease-in-out; 
 }
 
 .car-card:hover p::after {
-  width: 100%; /* Expands the underline */
+  width: 100%; 
 }
