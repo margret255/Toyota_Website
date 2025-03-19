@@ -7,7 +7,7 @@ function App() {
     <div>
       <Navbar />
       <h1>Hello World</h1>
-      <Used />  {/* Add Used component here */}
+      <Navbar/>  {}
     </div>
   );
 }
