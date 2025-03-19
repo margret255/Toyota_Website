@@ -1,120 +1,182 @@
+/* General Styles */
 .used-container {
-    font-family: Arial, sans-serif;
-    color: #333;
-    max-width: 1200px;
-    margin: auto;
-  }
-  
-
-  .hero {
-    position: relative;
-    text-align: center;
-  }
-  
-  .hero-image {
-    width: 100%;
-    height: auto;
-  }
-  
-  .hero-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background: rgba(0, 0, 0, 0.6);
-    color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-    border-radius: 10px;
-  }
-  
-  .hero-button {
-    display: inline-block;
-    background: red;
-    color: #fff;
-    padding: 10px 15px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-top: 10px;
-    border-radius: 5px;
-  }
-  
-  .hero-button:hover {
-    background: darkred;
-  }
-  
-
-  .content {
-    text-align: center;
-    padding: 35px;
-  }
-  
-  .content h2 {
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
- 
-  .benefits, .warranty {
-    display: flex;
-    justify-content: space-around;
-    text-align: center;
-    padding: 20px;
-    background: #f5f5f5;
-  }
-  
-  .benefit-box, .warranty-box {
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-    width: 30%;
-  }
-  
- /* Footer */
-.footer {
-  background: black;
-  color: white;
-  padding: 20px;
-  text-align: center;
-  position: fixed; /* Keeps it fixed at the bottom */
-  bottom: 0;
-  left: 0;
-  width: 100%; /* Ensures it spans the full width */
-  z-index: 1000; /* Keeps it above other content */
+  font-family: Arial, sans-serif;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  background-color: #f9f9f9;
 }
 
-.footer-links, .footer-social {
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 400px;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.hero-title {
+  color: #fff;
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+.hero-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #d71920;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.hero-button:hover {
+  background: #b5171e;
+}
+
+/* Content Section */
+.content {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.content h2 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+.content p {
+  font-size: 16px;
+  line-height: 1.6;
+  color: #555;
+}
+
+/* Benefits Section */
+.benefits {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 30px;
+  padding: 40px;
+  background: #fff;
+  text-align: left;
+  max-width: 900px;
+  margin: auto;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: center;
+}
+
+.benefit-icon {
+  width: 50px;
+  height: 50px;
+  background: #f2f2f2;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 15px;
+}
+
+.benefit-icon img {
+  width: 30px;
+  height: 30px;
+}
+
+.benefit-text {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Warranty Section */
+.warranty {
   display: flex;
   justify-content: center;
   gap: 20px;
+  padding: 20px;
+  background: #d71920;
+  color: #fff;
 }
 
-.footer-links ul {
+.warranty-box {
+  text-align: center;
+  padding: 15px;
+  background: #b5171e;
+  border-radius: 8px;
+  width: 250px;
+  font-size: 16px;
+}
+
+/* Footer */
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.footer h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.footer ul {
   list-style: none;
   padding: 0;
-  display: flex;
-  gap: 15px;
 }
 
-.footer-links ul li a {
-  color: white;
+.footer ul li {
+  margin-bottom: 5px;
+}
+
+.footer ul li a {
+  text-decoration: none;
+  color: #bbb;
+}
+
+.footer ul li a:hover {
+  color: #fff;
+}
+
+.footer-social {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.footer-social a {
+  color: #fff;
+  margin: 0 10px;
   text-decoration: none;
 }
 
-.footer-links ul li a:hover,
 .footer-social a:hover {
   text-decoration: underline;
 }
 
 .footer-text {
-  margin-top: 10px;
+  text-align: center;
+  margin-top: 20px;
   font-size: 14px;
+  color: #bbb;
 }
-
-
-.used-container {
-  padding-bottom: 80px; /* Adjust based on footer height */
-}
-
-  
