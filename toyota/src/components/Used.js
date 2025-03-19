@@ -2,15 +2,15 @@ import React from "react";
 import { Link } from "react-router-dom";
 import "../styles/Used.css";
 
+
 const Used = () => {
   return (
     <div className="used-container">
       {}
       <header className="hero">
-        <img src="/images/hero-bg.jpg" alt="Toyota U Trust" className="hero-image" />
+      <img src={require("/assets/certified-used-cars.jpg")} alt="Overlay Image" className="overlay-image" />
         <div className="hero-overlay">
-          <h1 className="hero-title">Toyota U Trust</h1>
-          <Link to="#" className="hero-button">CLICK HERE TO SEE USED CAR INVENTORY</Link>
+        <img src=""/>
         </div>
       </header>
 
