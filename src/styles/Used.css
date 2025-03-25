@@ -326,16 +326,30 @@ h2::after {
 /* Parent Container */
 .trust-section {
   display: flex;
+  gap: 20px;
+  grid-template-columns: 1fr 1fr;
   justify-content: space-between;
   flex-wrap: wrap;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   padding: 40px 0;
-  max-width: 1200px;
- margin-left: 0;
+  margin: auto;
+  margin-right: 40px;
 }
 .trust-left{
   width: 50%;
+  flex-direction: column;
+  display: flex;
+  gap: 20px;
+}
+
+/* Right Section */
+.trust-right {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  align-self: start; /* Pushes it down */
+   /* Adjust this to move it below the heading */
 }
 
 /* Title */
@@ -367,8 +381,11 @@ flex-direction: column;
 }
 .benefits,
 .warranty {
-  display: flex;
-  align-items: center;
+  display: grid;
+  align-items: flex-start;
+  grid-template-rows: repeat(3, 1fr);
+  
+  flex-direction: column;
   gap: 20px;
 }
 
@@ -398,10 +415,8 @@ flex-direction: column;
   font-family: Arial, sans-serif;
 }
 
-/* Right Section */
-.trust-right{
-  width: 50%;
-}
+
+
 
 /* Warranty List */
 .warranty {
@@ -437,6 +452,9 @@ flex-direction: column;
 .warranty-box img {
   width: 30px;
   height: 30px;
+}
+.warranty-box:first-child {
+  margin-top: 0px; /* Adjust if necessary */
 }
 
 
