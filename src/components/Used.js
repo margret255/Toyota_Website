@@ -5,7 +5,7 @@ import "../styles/Used.css";
 
 
 
-const Used = () => {
+const UsedCars = () => {
   return (
     <div className="used-container">
       {}
@@ -181,4 +181,4 @@ const Used = () => {
   );
 };
 
-export default Used;
+export default UsedCars;
